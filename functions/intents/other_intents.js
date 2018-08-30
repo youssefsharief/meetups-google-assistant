@@ -1,9 +1,6 @@
-const stateStore = require('../state_store')
-const responses = require('../responses/response')
-const constants = require('../config/constants')
 
 module.exports = {
-    panic() {
+    panic(conv) {
         const displayText = `
         Step 1 take a deep breath. \n
         Step 2 Exhale \n
@@ -18,8 +15,7 @@ module.exports = {
         Step 4 exhale.\n 
         </speak>
     `
-        return stateStore.app.tell({ displayText, speech })
-        // return stateStore.requestSource === constants.googleAssistantRequest ? responses.sendGoogleResponse() : responses.sendResponse()
+        return conv.close(speech)
     },
 
 }

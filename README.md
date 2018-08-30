@@ -14,15 +14,15 @@
         * `actions_capability_screen_output`
 
 ### Code
-* app.tell() mutes mic 
-* app.speak() opens the mic
+* conv.close() mutes mic 
+* app.ask() opens the mic
+* Two ways to save state
+    * For a user
+        * **conv.user.storage**
+    * For a conversation with a user    
+        * **conv.data**
 
 
 TODO
- 1) add previous and repeat intents for showing meetups
-
-2) make code changes to give proper response on previous and repeat query
-
-3) Add a question where you need a response from the user before you open the mic 
-
-4) mute the mic where you don't expect no input from the user 
+* Fix state with events
+ 
