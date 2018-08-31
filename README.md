@@ -1,5 +1,5 @@
 ## Pre-Usage
-* Use V1 Legacy Dialogflow api
+* Use V2 Dialogflow api
 * Enable fullfilment for intents
 
 ## Usage
