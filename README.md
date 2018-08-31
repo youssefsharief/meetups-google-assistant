@@ -5,3 +5,7 @@
 ## Usage
 * npm start
 * node ngrok
+
+## To do
+* Add location capability
+* Fix listing meetups by card
