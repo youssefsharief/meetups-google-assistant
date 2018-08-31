@@ -1,5 +1,5 @@
-const functions = require('firebase-functions'); // Cloud Functions for Firebase library
-const { dialogflow } = require('actions-on-google'); // Google Assistant helper library
+const functions = require('firebase-functions');
+const { dialogflow } = require('actions-on-google');
 const commonIntents = require('./intents/common_intents')
 const otherIntents = require('./intents/other_intents')
 const displayMeetupItents = require('./intents/display_meetup_intents')
@@ -16,7 +16,6 @@ app.intent('showmeetups - previous', conv => displayMeetupItents.showMeetupsPrev
 app.intent('showmeetups - repeat', conv => displayMeetupItents.showMeetupsRepeat(conv))
 app.intent('show meetup list', conv => displayMeetupItents.showMeetupsList(conv))
 app.intent('show meetup list - select.number', conv => displayMeetupItents.showNumber(conv))
-
 
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app)

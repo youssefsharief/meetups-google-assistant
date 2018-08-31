@@ -3,7 +3,7 @@ const apiKey = require('../config/config').meetupAPIKey
 const colors = require('colors/safe');
 const image = 'https://secure.meetupstatic.com/s/img/786824251364989575000/logo/swarm/m_swarm_630x630.png'
 const { List, Button, BasicCard, Image } = require('actions-on-google')
-const fakeData = require('../config/data')
+const fakeData = require('../config/fake_data')
 
 function buildSingleMeetupResponse(conv) {
 	let meetup = conv.data.events[conv.data.meetupIndex]
@@ -45,8 +45,6 @@ function buildMeetupListResponse(conv) {
 
 	conv.ask(`<speak>` + reduction + `</speak>`)
 
-	// console.log(colors.yellow('Hmmamamamama'))
-
 	return conv.ask(new List({
 		title: 'Titel',
 		items: {
@@ -60,16 +58,6 @@ function buildMeetupListResponse(conv) {
 			}
 		}
 	}))
-	// return conv.ask('asd')
-
-
-	// let res = conv.buildRichResponse().addSimpleResponse(speech).buildList('List of meeaaatups')
-	// events.forEach((meetup, i) => {
-	// 	res.addItems(
-	// 		conv.buildOptionItem(`meetup ${i}`).setTitle(`meetup ${i + 1} :`).setImage(image, meetup.name)
-	// 	)
-	// });
-	// conv.ask(res)
 }
 
 function fetchFakeEvents() {
